@@ -48,51 +48,60 @@ export default function App() {
     t: TRANSLATIONS[locale],
   };
 
-  if (view.name === "picker") {
-    return (
-      <LocaleContext.Provider value={localeCtx}>
+  const renderView = () => {
+    if (view.name === "picker") {
+      return (
         <SessionPicker
           sessions={sessions}
           onNew={goToSetup}
           onResume={handleResume}
           onDelete={deleteSession}
         />
-      </LocaleContext.Provider>
-    );
-  }
+      );
+    }
 
-  if (view.name === "setup") {
-    return (
-      <LocaleContext.Provider value={localeCtx}>
-        <GameSetup onStart={handleNewGame} onBack={goToPicker} />
-      </LocaleContext.Provider>
-    );
-  }
+    if (view.name === "setup") {
+      return <GameSetup onStart={handleNewGame} onBack={goToPicker} />;
+    }
 
-  if (view.name === "game") {
-    const session = getSession(view.sessionId);
-    if (!session) {
-      return (
-        <LocaleContext.Provider value={localeCtx}>
+    if (view.name === "game") {
+      const session = getSession(view.sessionId);
+      if (!session) {
+        return (
           <SessionPicker
             sessions={sessions}
             onNew={goToSetup}
             onResume={handleResume}
             onDelete={deleteSession}
           />
-        </LocaleContext.Provider>
-      );
-    }
-    return (
-      <LocaleContext.Provider value={localeCtx}>
+        );
+      }
+      return (
         <GameBoard
           session={session}
           onUpdate={handleUpdateSession}
           onBack={goToPicker}
         />
-      </LocaleContext.Provider>
-    );
-  }
+      );
+    }
 
-  return null;
+    return null;
+  };
+
+  return (
+    <LocaleContext.Provider value={localeCtx}>
+      <div className="flex min-h-svh flex-col">
+        <div className="flex-1">{renderView()}</div>
+        <footer className="pb-2 text-center text-xs text-p10-text-dim">
+          <a
+            href="https://github.com/digitalkaoz/phase10-tracker"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+        </footer>
+      </div>
+    </LocaleContext.Provider>
+  );
 }
