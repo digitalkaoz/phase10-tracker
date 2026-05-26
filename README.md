@@ -4,17 +4,17 @@ A mobile-first PWA for tracking scores, phases, and round-by-round progress in P
 
 ## Tech Stack
 
-| Layer          | Technology                               |
-| -------------- | ---------------------------------------- |
-| Framework      | React 19                                 |
-| Language       | TypeScript 6.0 (`erasableSyntaxOnly`)    |
-| Build          | Vite 8                                   |
-| Styling        | Tailwind CSS v4                          |
-| PWA            | `vite-plugin-pwa` (Workbox, auto-update) |
-| Lint           | oxlint                                   |
-| Format         | oxfmt                                    |
-| Test           | Vitest 4 (unit + browser/Playwright)     |
-| Package mgr    | pnpm                                     |
+| Layer       | Technology                               |
+| ----------- | ---------------------------------------- |
+| Framework   | React 19                                 |
+| Language    | TypeScript 6.0 (`erasableSyntaxOnly`)    |
+| Build       | Vite 8                                   |
+| Styling     | Tailwind CSS v4                          |
+| PWA         | `vite-plugin-pwa` (Workbox, auto-update) |
+| Lint        | oxlint                                   |
+| Format      | oxfmt                                    |
+| Test        | Vitest 4 (unit + browser/Playwright)     |
+| Package mgr | pnpm                                     |
 
 ## Quick Start
 
@@ -60,18 +60,18 @@ src/
 
 ## Scripts
 
-| Command             | What it does                              |
-| ------------------- | ----------------------------------------- |
-| `pnpm dev`          | Vite dev server                           |
-| `pnpm build`        | Type-check + build                        |
-| `pnpm lint`         | oxlint (must pass clean)                  |
-| `pnpm fmt`          | oxfmt auto-format                         |
-| `pnpm fmt:check`    | oxfmt check (CI)                          |
-| `pnpm test`         | Vitest interactive (all projects)         |
-| `pnpm test:run`     | `vitest run` (unit + browser)             |
-| `pnpm test:unit`    | Vitest node env, `src/**/*.test.ts`       |
-| `pnpm test:browser` | Vitest browser (Playwright chromium)      |
-| `pnpm coverage`     | Unit tests with v8 coverage               |
+| Command             | What it does                         |
+| ------------------- | ------------------------------------ |
+| `pnpm dev`          | Vite dev server                      |
+| `pnpm build`        | Type-check + build                   |
+| `pnpm lint`         | oxlint (must pass clean)             |
+| `pnpm fmt`          | oxfmt auto-format                    |
+| `pnpm fmt:check`    | oxfmt check (CI)                     |
+| `pnpm test`         | Vitest interactive (all projects)    |
+| `pnpm test:run`     | `vitest run` (unit + browser)        |
+| `pnpm test:unit`    | Vitest node env, `src/**/*.test.ts`  |
+| `pnpm test:browser` | Vitest browser (Playwright chromium) |
+| `pnpm coverage`     | Unit tests with v8 coverage          |
 
 CI order: `fmt:check` → `lint` → `build` → `test:unit` → `test:browser`
 
