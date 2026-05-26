@@ -1,0 +1,25 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["typescript", "react", "react-hooks", "vitest", "oxc"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "error"
+  },
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  },
+  "options": {
+    "typeAware": true,
+    "maxWarnings": 0
+  },
+  "settings": {
+    "react": {
+      "version": "19"
+    }
+  },
+  "env": {
+    "browser": true,
+    "es2022": true
+  },
+  "ignorePatterns": ["dist/", "node_modules/"]
+}

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- Full bleed background for maskable safe zone -->
+  <rect width="512" height="512" fill="#7c3aed"/>
+  <text x="256" y="220" font-family="system-ui,sans-serif" font-weight="900" font-size="130" fill="white" text-anchor="middle" dominant-baseline="middle">P10</text>
+  <text x="256" y="330" font-family="system-ui,sans-serif" font-weight="500" font-size="54" fill="rgba(255,255,255,0.75)" text-anchor="middle" dominant-baseline="middle">TRACKER</text>
+</svg>

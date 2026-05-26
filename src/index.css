@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme {
+  --color-p10-bg: #0f0f13;
+  --color-p10-surface: #1a1b22;
+  --color-p10-surface-2: #22232d;
+  --color-p10-border: #2e303a;
+  --color-p10-text: #c9cad4;
+  --color-p10-text-dim: #6b6d7a;
+  --color-p10-heading: #f0f1f5;
+  --color-p10-accent: #7c3aed;
+  --color-p10-accent-light: #a78bfa;
+  --color-p10-accent-hover: #6d28d9;
+  --color-p10-red: #ef4444;
+  --color-p10-green: #22c55e;
+  --color-p10-yellow: #eab308;
+  --color-p10-blue: #3b82f6;
+  --color-p10-orange: #f97316;
+  --color-p10-orange-dim: #431407;
+
+  --font-sans: system-ui, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  color-scheme: dark;
+  /* Prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-p10-bg);
+  color: var(--color-p10-text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Safe area for notch / home bar */
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: inherit;
+  /* Ensure minimum tap target on touch devices */
+  touch-action: manipulation;
+}
+
+/* Prevent zoom on input focus on iOS */
+input[type="text"],
+input[type="number"] {
+  font-size: max(16px, 1em);
+}
